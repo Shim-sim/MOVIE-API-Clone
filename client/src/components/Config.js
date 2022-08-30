@@ -6,3 +6,4 @@ export const API_KEY = 'a0f71b373c91c5620fc830c03a42d6f1'
 
 
 export const IMAGE_BASE_URL = 'http://image.tmdb.org/t/p/'
+export const IMAGE_SIZE = 'w1280'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { List, Avatar, Row, Col, Button } from 'antd';
-import {API_URL, API_KEY, IMAGE_BASE_URL} from '../../Config'
+import {API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE } from '../../Config'
 import MainImage from '../../views/LandingPage/Sections/MainImage';
 import MovieInfo from './Sections/MovieInfo'
 import GridCards from '../commons/GridCards';
@@ -43,12 +43,14 @@ function MovieDetail(props) {
 		<div>
 			{/* Header */}
 			
-			
+		{Movie && 
 		<MainImage
-			image={`${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`}
+			image={`${IMAGE_BASE_URL}${IMAGE_SIZE}${Movie.backdrop_path}`}
 			title={Movie.original_title}
 			content={Movie.overview}
 		/>
+		}	
+		
 			
 			
 			{/* BODY */}
@@ -76,7 +78,7 @@ function MovieDetail(props) {
 				{/* Movie Grid Cards*/}
 				
 				{ActorToggle && 
-					<Row gutter={[16, 16]}>
+				<Row gutter={[16, 16]}>
 					{Casts && Casts.map((cast, index)=> (
 						<div key={index}>
 							<GridCards

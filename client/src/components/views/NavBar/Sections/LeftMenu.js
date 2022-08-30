@@ -5,16 +5,14 @@ const MenuItemGroup = Menu.ItemGroup;
 
 function LeftMenu(props) {
   return (
-    <Menu mode={props.mode}>
-    <Menu.Item key="favorite">
-      <a href="/favorite">favorite</a>
+	<Menu mode={props.mode}>
+    <Menu.Item key="Home">
+      <a href="/">Home</a>
     </Menu.Item>
-    <SubMenu title={<span>Blogs</span>}>
-      <MenuItemGroup title="Item 1">
-        <Menu.Item key="setting:1">my favorite</Menu.Item>
-        <Menu.Item key="setting:2">my page</Menu.Item>
-      </MenuItemGroup>
-    </SubMenu>
+		<Menu.Item key="favorite">
+      <a href="/favorite">Favorite</a>
+    </Menu.Item>
+    
   </Menu>
   )
 }
